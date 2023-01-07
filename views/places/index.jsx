@@ -1,15 +1,15 @@
 const React = require('react')
 const Def = require('./default')
 
-function home () {
+function index () {
     return (
       <Def>
           <main>
-              <h1>text</h1>
+              <h1>Index</h1>
           </main>
       </Def>
     )
   }
   
 
-module.exports = home
+module.exports = index
