@@ -28,3 +28,20 @@ REST-Rant is an app where users can review restaurants.
 | state | String |
 | cuisines | String |
 | pic | String |
+
+## Rants
+
+| Field | Type |
+| --- | --- |
+| _id | Object ID |
+| place_id | ref(places) Object_Id |
+| rant | Boolean |
+| rating | Number |
+| comment | String |
+| reviewer | String |
+
+## Planning
+
+### User Stories
+
+## Wireframes
