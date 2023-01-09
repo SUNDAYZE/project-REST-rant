@@ -5,7 +5,7 @@ function home () {
     return (
       <Def>
           <main>
-              <h1>text</h1>
+              <h1>Home</h1>
           </main>
       </Def>
     )
