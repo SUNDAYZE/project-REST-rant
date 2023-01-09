@@ -1,5 +1,6 @@
 const router = require('express').Router()
 
+//For some reason app.get was not working for me; it always crashed my code-only wokrs with router.get
 router.get('/', (req, res) => {
     let places = [{
         name: 'H-Thai-ML',
@@ -18,9 +19,4 @@ router.get('/', (req, res) => {
       res.render('places/index', { places })
   })
   
-
-
-  
-  
-
 module.exports = router
