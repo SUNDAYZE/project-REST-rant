@@ -14,7 +14,7 @@ let places = [{
   cuisines: 'Mexican',
   pic: '/images/compa-victor.jpeg' 
 }]
-router.get('/', (req, res) => {
+router.get('/',(req, res) => {
     
       
       res.render('places/index', { places })
@@ -29,5 +29,7 @@ router.get('/:arrayIndex', (req, res) => {
   res.send(places[req.params.arrayIndex])
 })
 
-
+router.post('/',(req, res) => {
+  res.send('post /places stub ')
+})
 module.exports = router
