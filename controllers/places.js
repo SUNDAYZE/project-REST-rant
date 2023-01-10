@@ -1,19 +1,7 @@
 const router = require('express').Router()
+const places = require('../models/places.js')
 
 
-let places = [{
-  name: 'Kamea Poke',
-  city: 'Dana Point',
-  state: 'CA',
-  cuisines: 'Hawaiian, Pan-Asian',
-  pic: '/images/poke-eat.jpg'
-}, {
-  name: 'Compa Victor',
-  city: 'Mexicali',
-  state: 'Baja California, Mexico',
-  cuisines: 'Mexican',
-  pic: '/images/compa-victor.jpeg' 
-}]
 router.get('/',(req, res) => {
     
       
@@ -29,7 +17,21 @@ router.get('/:arrayIndex', (req, res) => {
   res.send(places[req.params.arrayIndex])
 })
 
-router.post('/',(req, res) => {
-  res.send('post /places stub ')
+router.post('/', (req, res) => {
+  if (!req.body.pic) {
+    // Default image if one is not provided
+    req.body.pic = 'http://placekitten.com/400/400'
+  }
+  if (!req.body.city) {
+    req.body.city = 'Anytown'
+  }
+  if (!req.body.state) {
+    req.body.state = 'USA'
+  }
+  places.push(req.body)
+  res.redirect('/places')
 })
+
+
+
 module.exports = router
