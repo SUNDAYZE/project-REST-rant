@@ -1,22 +1,33 @@
 const router = require('express').Router()
 
-//For some reason app.get was not working for me; it always crashed my code-only wokrs with router.get
+
+let places = [{
+  name: 'Kamea Poke',
+  city: 'Dana Point',
+  state: 'CA',
+  cuisines: 'Hawaiian, Pan-Asian',
+  pic: '/images/poke-eat.jpg'
+}, {
+  name: 'Compa Victor',
+  city: 'Mexicali',
+  state: 'Baja California, Mexico',
+  cuisines: 'Mexican',
+  pic: '/images/compa-victor.jpeg' 
+}]
 router.get('/', (req, res) => {
-    let places = [{
-        name: 'H-Thai-ML',
-        city: 'Seattle',
-        state: 'WA',
-        cuisines: 'Thai, Pan-Asian',
-        pic: 'http://placekitten.com/250/250'
-      }, {
-        name: 'Coding Cat Cafe',
-        city: 'Phoenix',
-        state: 'AZ',
-        cuisines: 'Coffee, Bakery',
-        pic: 'http://placekitten.com/250/250'
-      }]
+    
       
       res.render('places/index', { places })
   })
+
+  router.get('/new', (req, res) => {
+    res.render('places/new')
+  })
   
+  // SHOW
+router.get('/:arrayIndex', (req, res) => {
+  res.send(places[req.params.arrayIndex])
+})
+
+
 module.exports = router
