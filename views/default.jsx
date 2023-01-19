@@ -24,7 +24,9 @@ function Def(html) {
                 </nav>
 
                 {html.children}
+
             </body>
+
         </html>
     )
 }
