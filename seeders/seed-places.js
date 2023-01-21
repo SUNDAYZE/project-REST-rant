@@ -1,7 +1,9 @@
 //generator of data
+const mongoose = require('mongoose')
 const db = require('../models')
 
 db.Place.create([{
+    _id: mongoose.Types.ObjectId(3),
     name: 'H-Thai-ML',
     city: 'Seattle',
     state: 'WA',
